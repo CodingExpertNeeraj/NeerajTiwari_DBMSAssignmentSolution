@@ -70,7 +70,11 @@ from PASSENGER left join PRICE
 ON PASSENGER.Bus_Type=PRICE.Bus_Type AND PASSENGER.Distance=PRICE.Distance;
 
 -- 7) What is the passenger name and his/her ticket price who travelled in Sitting bus for a distance of 1000 KM s 
-SELECT Passenger_Name from PASSENGER where Bus_Type="Sitting" AND distance = 1000;
+select passenger_name, price from Passenger Pgr
+inner join Price Prc
+on Pgr.bus_type = Prc.bus_type and Pgr.distance = Prc.distance
+where Pgr.distance = 1000 and Pgr.bus_type = 'Sitting';
+
 
 -- 8) What will be the Sitting and Sleeper bus charge for Pallavi to travel from Bangalore to Panaji?
 -- Question: Can we solve this problem using join? 
