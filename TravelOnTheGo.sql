@@ -82,9 +82,10 @@ IN
 SELECT DISTINCT Distance from PASSENGER;
 
 -- 10) Display the passenger name and percentage of distance travelled by that passenger from the total distance travelled by all passengers without using user variables
+     select passenger_name as 'passenger name', distance * 100.0/sum(distance) over() as '% of total distance'
+      from passenger;
 
-
--- Display the distance, price in three categories in table Price
+-- 11 Display the distance, price in three categories in table Price
 -- a) Expensive if the cost is more than 1000
 -- b) Average Cost if the cost is less than 1000 and greater than 500
 -- c) Cheap otherwise
